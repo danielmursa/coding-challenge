@@ -118,8 +118,8 @@ This project utilizes Docker to manage and deploy a Python application across mu
 
 1. **Clone the Repository:**
    ```bash
-   git clone <repository-url>
-   cd <repository-directory>
+   git clone https://github.com/danielmursa/coding-challenge
+   cd https://github.com/danielmursa/coding-challenge
    ```
 
 2. **Build the Docker images:**
