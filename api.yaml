@@ -1,0 +1,167 @@
+openapi: 3.0.0
+info:
+  title: Groups API
+  version: 1.0.0
+  description: API for managing groups associated with a specific node.
+servers:
+  - url: http://localhost:5000/v1
+    description: Local server
+
+paths:
+  /groups:
+    get:
+      summary: Retrieve a list of groups
+      description: Retrieves and returns a list of groups associated with the current node.
+      responses:
+        '200':
+          description: A list of groups associated with the node
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  nodeId:
+                    type: string
+                    description: The ID of the node
+                  groups:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        groupId:
+                          type: string
+                          description: The ID of the group
+    delete:
+      summary: Delete all groups
+      description: Deletes all groups associated with the current node.
+      responses:
+        '200':
+          description: Successfully deleted all groups
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Success message
+                    example: "All groups deleted successfully"
+
+  /group/{groupId}/:
+    get:
+      summary: Retrieve a specific group
+      description: Retrieves and returns details of a specific group by ID.
+      parameters:
+        - name: groupId
+          in: path
+          required: true
+          schema:
+            type: string
+          description: The ID of the group to retrieve
+      responses:
+        '200':
+          description: Details of the specified group
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  groupId:
+                    type: string
+                    description: The ID of the group
+        '404':
+          description: Group not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Error message
+                    example: "Not found"
+
+  /group/:
+    post:
+      summary: Create a new group
+      description: Creates a new group with the provided details. Must include 'groupId'.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                groupId:
+                  type: string
+                  description: The ID of the new group
+      responses:
+        '201':
+          description: Successfully created a new group
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  groupId:
+                    type: string
+                    description: The ID of the new group
+        '400':
+          description: Bad request, possibly due to existing group or invalid data
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Error message
+                    example: "Bad request. Perhaps the object exists."
+
+    delete:
+      summary: Delete a specific group
+      description: Deletes a group with the specified groupId.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                groupId:
+                  type: string
+                  description: The ID of the group to delete
+      responses:
+        '200':
+          description: Successfully deleted the group
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Success message
+                    example: "Group deleted successfully"
+        '400':
+          description: Bad request, possibly due to invalid data
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Error message
+                    example: "Bad request. Possibly due to invalid data."
+        '404':
+          description: Group not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Error message
+                    example: "Not found"

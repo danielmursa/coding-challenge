@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+  node1:
+    build: .
+    environment:
+      - NODE_ID=1
+      - PORT=5001
+      - ENV=docker
+    volumes:
+      - ./data:/app/data
+    ports:
+      - "5001:5001"
+
+  node2:
+    build: .
+    environment:
+      - NODE_ID=2
+      - PORT=5002
+      - ENV=docker
+    volumes:
+      - ./data:/app/data
+    ports:
+      - "5002:5002"
+
+  node3:
+    build: .
+    environment:
+      - NODE_ID=3
+      - PORT=5003
+      - ENV=docker
+    volumes:
+      - ./data:/app/data
+    ports:
+      - "5003:5003"
+ 
