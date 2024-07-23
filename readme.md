@@ -164,7 +164,7 @@ This project utilizes Docker to manage and deploy a Python application across mu
 
 ## Views
 
-![alt text](![alt text](https://github.com/danielmursa/coding-challenge/blob/main/static/nodes.png?raw=true))
+(![alt text](https://github.com/danielmursa/coding-challenge/blob/main/static/nodes.png?raw=true))
 
 
 ## Error Handling
