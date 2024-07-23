@@ -11,7 +11,6 @@ class Config:
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     LOG_LEVEL = logging.INFO
     LOG_FILE = "logs/app.log"
-    LOG_FILE_CLIENT = "logs/client.log"
 
 
 # TODO sistema anche SQLALCHEMY_DATABASE_URI con basedir

@@ -8,9 +8,11 @@ services:
       - PORT=5001
       - ENV=docker
     volumes:
-      - ./data:/app/data
+      - ../app/data:/app/data
+      - ../app:/app/
     ports:
       - "5001:5001"
+    command: python app.py
 
   node2:
     build: .
@@ -19,9 +21,11 @@ services:
       - PORT=5002
       - ENV=docker
     volumes:
-      - ./data:/app/data
+      - ../app/data:/app/data
+      - ../app:/app/
     ports:
       - "5002:5002"
+    command: python app.py
 
   node3:
     build: .
@@ -30,7 +34,8 @@ services:
       - PORT=5003
       - ENV=docker
     volumes:
-      - ./data:/app/data
+      - ../app/data:/app/data
+      - ../app:/app/
     ports:
       - "5003:5003"
- 
+    command: python app.py

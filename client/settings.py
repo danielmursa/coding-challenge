@@ -10,3 +10,5 @@ POST = "POST"
 DELETE = "DELETE"
 MAX_RETRIES = 3
 DELAY = 1.0
+
+LOG_FILE = "logs/client.log"

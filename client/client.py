@@ -4,27 +4,19 @@ import requests
 import logging
 from settings import *
 from logging import FileHandler
-from config import LocalConfig, DockerConfig
 from concurrent.futures import ThreadPoolExecutor, as_completed
-
-# ENV
-config_type = os.getenv("ENV", "local")
-if config_type == "local":
-    config = LocalConfig
-else:
-    config = DockerConfig
 
 
 # Logger Config
-file_handler = logging.FileHandler(config.LOG_FILE_CLIENT)
+file_handler = logging.FileHandler(LOG_FILE)
 file_handler.setFormatter(
     logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
 )
-file_handler.setLevel(config.LOG_LEVEL)
+file_handler.setLevel(logging.INFO)
 logger = logging.getLogger(__name__)
 if not logger.hasHandlers():
     logger.addHandler(file_handler)
-    logger.setLevel(config.LOG_LEVEL)
+    logger.setLevel(logging.INFO)
 
 
 def retry_request(func, max_retries=MAX_RETRIES, delay=DELAY):
