@@ -27,23 +27,22 @@ The module ensures that any operation (CREATE or DELETE) is performed consistent
 12. **Concurrency**: Using threads in the Node and ClusterClient classes significantly enhances the efficiency and scalability of the system by managing simultaneous operations across multiple nodes more quickly and robustly.
 
 ## Structure Project
-swisscom_api/<br> 
-│<br> 
+<b>swisscom_api/</b><br> 
 ├── <b>app/                </b># Main application folder<br> 
-   ├── <b>data/                </b># Data storage folder<br> 
-   ├── <b>logs/                </b># Logs app.py folder<br> 
-   ├── <b>app.py                </b># Main application script for run nodes api<br> 
-   ├── <b>config.py             </b># Configuration settings and constants<br> 
-   ├── <b>utils.py              </b># Utility functions and helper methods<br> 
+&nbsp;&nbsp;&nbsp;   ├── <b>data/                </b># Data storage folder<br> 
+&nbsp;&nbsp;&nbsp;   ├── <b>logs/                </b># Logs app.py folder<br> 
+&nbsp;&nbsp;&nbsp;   ├── <b>app.py                </b># Main application script for run nodes api<br> 
+&nbsp;&nbsp;&nbsp;   ├── <b>config.py             </b># Configuration settings and constants<br> 
+&nbsp;&nbsp;&nbsp;   ├── <b>utils.py              </b># Utility functions and helper methods<br> 
 ├── <b>client/                </b># Client folder<br> 
-   ├── <b>client.py             </b># Client<br> 
-   ├── <b>main.py               </b># Entry point for the client<br> 
-   ├── <b>test.py               </b># UnitTests for the application<br> 
-   ├── <b>settings.py           </b># Settings for the application environment<br> 
+&nbsp;&nbsp;&nbsp; ├── <b>client.py             </b># Client<br> 
+&nbsp;&nbsp;&nbsp; ├── <b>main.py               </b># Entry point for the client<br> 
+&nbsp;&nbsp;&nbsp; ├── <b>test.py               </b># UnitTests for the application<br> 
+&nbsp;&nbsp;&nbsp; ├── <b>settings.py           </b># Settings for the application environment<br> 
 ├── <b>docker/                </b># Docker folder<br> 
-   ├── <b>Dockerfile            </b># Dockerfile to build the Docker image<br> 
-   ├── <b>docker-compose.yml    </b># Docker Compose file to define and manage multi-container setup<br> 
-   ├── <b>requirements.txt      </b># Python dependencies for the application<br> 
+&nbsp;&nbsp;&nbsp; ├── <b>Dockerfile            </b># Dockerfile to build the Docker image<br> 
+&nbsp;&nbsp;&nbsp; ├── <b>docker-compose.yml    </b># Docker Compose file to define and manage multi-container setup<br> 
+&nbsp;&nbsp;&nbsp; ├── <b>requirements.txt      </b># Python dependencies for the application<br> 
 ├── <b>logs/                </b># Logs<br> 
 └── <b>readme.md             </b># README file<br> 
 
