@@ -8,6 +8,8 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 
 
 # Logger Config
+if not os.path.exists("logs"):
+    os.makedirs("logs")
 file_handler = logging.FileHandler(LOG_FILE)
 file_handler.setFormatter(
     logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
