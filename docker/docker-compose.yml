@@ -1,41 +1,35 @@
 version: '3'
 
 services:
-  node1:
+  node:
     build: .
     environment:
-      - NODE_ID=1
-      - PORT=5001
       - ENV=docker
     volumes:
       - ../app/data:/app/data
       - ../app:/app/
+    command: python app.py
+
+  node1:
+    extends:
+      service: node
+    env_file:
+      - node1.env
     ports:
       - "5001:5001"
-    command: python app.py
 
   node2:
-    build: .
-    environment:
-      - NODE_ID=2
-      - PORT=5002
-      - ENV=docker
-    volumes:
-      - ../app/data:/app/data
-      - ../app:/app/
+    extends:
+      service: node
+    env_file:
+      - node2.env
     ports:
       - "5002:5002"
-    command: python app.py
 
   node3:
-    build: .
-    environment:
-      - NODE_ID=3
-      - PORT=5003
-      - ENV=docker
-    volumes:
-      - ../app/data:/app/data
-      - ../app:/app/
+    extends:
+      service: node
+    env_file:
+      - node3.env
     ports:
       - "5003:5003"
-    command: python app.py
