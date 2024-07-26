@@ -1,4 +1,4 @@
-# API Consumer Client Module (Coding-Challenge Swisscom)
+# API Consumer Client Module (Coding-Challenge)
 
 ## Introduction
 
@@ -27,7 +27,7 @@ The module ensures that any operation (CREATE or DELETE) is performed consistent
 12. **Concurrency**: Using threads in the Node and ClusterClient classes significantly enhances the efficiency and scalability of the system by managing simultaneous operations across multiple nodes more quickly and robustly.
 
 ## Structure Project
-<b>swisscom_api/</b><br> 
+<b>coding_challenge/</b><br> 
 ├── <b>app/                </b># Main application folder<br> 
 &nbsp;&nbsp;&nbsp;   ├── <b>data/                </b># Data storage folder<br> 
 &nbsp;&nbsp;&nbsp;   ├── <b>logs/                </b># Logs app.py folder<br> 
